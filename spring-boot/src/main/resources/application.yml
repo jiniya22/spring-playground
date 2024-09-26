@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: spring-boot
+
+  mvc:
+    log-request-details: true
+
+logging:
+  level:
+    root: info
+    web: debug
+    org.springframework.web: trace
