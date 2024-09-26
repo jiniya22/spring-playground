@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>NEW PAGE</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/basic.css}"/>
+</head>
+<body>
+<div class="d__container">
+    <div id="title">
+        <div style="display: flow-root; width: 50%; padding-top: 50px;">
+            <img alt="jiniworld" src="/static/img/cherries.png" width="45px" height="auto"/>
+            <div style="color: white; font-size: 14px; letter-spacing: 0.88px;">JINIWORLD</div>
+        </div>
+    </div>
+    <div id="content" style="background-color: white; height: 100%; padding: 60px 30px; position: relative; margin-top: 20px; font-size: 13px;">
+        <th:block th:utext="${message}"></th:block>
+    </div>
+    <div id="footer">
+        <div style="padding: 40px 30px;">
+            <div style="font-size:12px;">Hello SpringBoot, with <b>Jini!!</b></div>
+            <hr />
+
+            <div style="display: flex; position: relative;">
+                <div style="display: flow-root; width: 50%; min-width: 250px;">
+                    <div style="color:rgba(0, 0, 0, 0.6); font-size: 11px; line-height: 18px;">
+                        <a href="https://blog.jiniworld.me" target="_blank" style="text-decoration: none;">https://blog.jiniworld.me</a>
+                    </div>
+                    <div style="color:#999999; font-size: 11px; line-height: 18px;">Copyright © jiniworld, All rights reserved.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

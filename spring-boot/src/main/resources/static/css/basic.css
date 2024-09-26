@@ -1,0 +1,21 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+.d__container {
+    width: 600px;
+    line-height: 21px;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+    font-family: 'Noto Sans KR', '맑은 고딕', '돋움체', dotumche, applegothic, 'Helvetica Neue', Roboto, Arial, sans-serif;
+    font-size: 13px;
+    color: #333333;
+    font-weight: 300;
+}
+
+#title {
+    padding: 0px 30px; display: flex; position: relative; height: 145px; margin-top: 10px; background-color: #cf574973;
+}
+
+#footer {
+    background-color: #cccccc; position: relative; margin: 20px 0 189px;
+}
