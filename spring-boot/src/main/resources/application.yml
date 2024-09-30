@@ -1,16 +1,35 @@
 spring:
   application:
     name: spring-boot
+  profiles:
+    active: local
+
+  devtools:
+    restart:
+      enabled: true
+      log-condition-evaluation-delta: true
+      additional-exclude: ttt/**,**/Ttt*.class
+      trigger-file: .reloadtrigger
+    livereload:
+      enabled: false
+
+  main:
+    register-shutdown-hook: true
 
   mvc:
     log-request-details: true
     log-resolved-exception: true
     static-path-pattern: /static/**
 
+  thymeleaf:
+    cache: false
+
   web:
     resources:
       static-locations:
         - classpath:/static/
+      cache:
+        period: 0
 
 logging:
   level:

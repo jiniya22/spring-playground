@@ -12,17 +12,18 @@
     <div id="title">
         <div style="display: flow-root; width: 50%; padding-top: 50px;">
             <img alt="jiniworld" src="/static/img/cherries.png" width="45px" height="auto"/>
+            <div style="color: white; font-size: 14px; letter-spacing: 0.88px;">PAGE 1</div>
         </div>
     </div>
     <div id="content" style="background-color: white; height: 100%; padding: 60px 30px; position: relative; margin-top: 20px; font-size: 13px;">
         <th:block th:utext="${message}"></th:block>
         <div>
-            <a th:href="@{/v/page1?message=__${message}__}">PAGE 1 으로 이동222</a>
+            <a th:href="@{/v/home?message=__${message}__}">HOME 으로 이동</a>
         </div>
     </div>
     <div id="footer">
         <div style="padding: 40px 30px;">
-            <div style="font-size:12px;">Hello SpringBoot, with <b>Jini22</b></div>
+            <div style="font-size:12px;">PAGE 1, with <b>Jini3</b></div>
             <hr />
 
             <div style="display: flex; position: relative;">
@@ -36,7 +37,5 @@
         </div>
     </div>
 </div>
-
-<script src="https://github.com/livereload/livereload-js/raw/master/dist/livereload.js?host=localhost"></script>
 </body>
 </html>

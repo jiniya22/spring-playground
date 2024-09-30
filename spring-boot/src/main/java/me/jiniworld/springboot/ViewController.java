@@ -15,4 +15,10 @@ class ViewController {
         model.addAttribute("message", message);
         return "home";
     }
+
+    @GetMapping(value = "/page1")
+    public String page1(@RequestParam(value = "message", required = false) String message, Model model){
+        model.addAttribute("message", message);
+        return "page1";
+    }
 }
