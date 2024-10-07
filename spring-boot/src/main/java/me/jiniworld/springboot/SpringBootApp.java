@@ -2,6 +2,7 @@ package me.jiniworld.springboot;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -21,6 +22,11 @@ public class SpringBootApp {
 	@Bean
 	CommandLineRunner commandLineRunner() {
 		return args -> log.info("commandLineRunner bean : {}", Arrays.toString(args));
+	}
+
+	@Bean
+	public ExitCodeGenerator exitCodeGenerator() {
+		return () -> 42;
 	}
 
 }
