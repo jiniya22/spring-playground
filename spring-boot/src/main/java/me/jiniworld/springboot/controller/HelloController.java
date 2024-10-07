@@ -1,4 +1,4 @@
-package me.jiniworld.springboot;
+package me.jiniworld.springboot.controller;
 
 import org.springframework.web.bind.annotation.*;
 
