@@ -1,5 +1,6 @@
 package me.jiniworld.springboot.controller;
 
+import me.jiniworld.springboot.domain.User;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/hello")
@@ -13,19 +14,12 @@ class HelloController {
 
     @PostMapping
     public String hello(@RequestBody User user) {
-        return user.name +", " + user.email;
+        return user.name() +", " + user.email();
     }
 
     @PutMapping("/ttt")
     public String hello2(@RequestBody User user) {
-        return user.name +", " + user.email;
+        return user.name() +", " + user.email();
     }
 
-    record User(Long id, String name, String email, int age){
-
-        @Override
-        public String toString() {
-            return String.format("User(%d): %s", id, name);
-        }
-    }
 }
