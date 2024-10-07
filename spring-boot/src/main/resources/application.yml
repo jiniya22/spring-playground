@@ -7,14 +7,16 @@ spring:
   devtools:
     restart:
       enabled: true
-      log-condition-evaluation-delta: true
+      log-condition-evaluation-delta: false
       additional-exclude: ttt/**,**/Ttt*.class
       trigger-file: .reloadtrigger
     livereload:
       enabled: false
 
   main:
+    log-startup-info: false
     register-shutdown-hook: true
+    lazy-initialization: true
 
   mvc:
     log-request-details: true
@@ -35,4 +37,6 @@ logging:
   level:
     root: info
     web: debug
-    org.springframework.web: trace
+    org.springframework:
+      boot.autoconfigure: info
+      web: info
