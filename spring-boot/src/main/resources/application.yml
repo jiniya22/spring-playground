@@ -1,7 +1,5 @@
 spring:
   application:
-    admin:
-      enabled: true
     name: spring-boot
   profiles:
     active: local
@@ -35,17 +33,11 @@ spring:
       cache:
         period: 0
 
-  jmx:
-    enabled: true
-
 management:
-  endpoint:
-    env:
-      show-values: always
   endpoints:
     web:
       exposure:
-        include: env
+        include: startup
 
 logging:
   level:
