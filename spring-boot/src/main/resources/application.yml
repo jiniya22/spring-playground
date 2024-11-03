@@ -34,10 +34,13 @@ spring:
         period: 0
 
 management:
+  endpoint:
+    env:
+      show-values: always
   endpoints:
     web:
       exposure:
-        include: startup
+        include: env
 
 logging:
   level:
@@ -46,3 +49,5 @@ logging:
     org.springframework:
       boot.autoconfigure: info
       web: debug
+
+name: jini
