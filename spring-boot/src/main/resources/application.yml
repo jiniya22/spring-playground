@@ -3,6 +3,8 @@ spring:
     name: spring-boot
   profiles:
     active: local
+  config:
+    import: classpath:/demo2.yml
 
   devtools:
     restart:

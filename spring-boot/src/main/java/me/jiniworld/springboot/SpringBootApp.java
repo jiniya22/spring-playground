@@ -1,15 +1,17 @@
 package me.jiniworld.springboot;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@Slf4j
+import java.util.Map;
+
 @SpringBootApplication
 public class SpringBootApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootApp.class, args);
+		SpringApplication app = new SpringApplication(SpringBootApp.class);
+		app.setDefaultProperties(Map.of("spring.config.on-not-found", "ignore"));
+		app.run(args);
 	}
 
 }

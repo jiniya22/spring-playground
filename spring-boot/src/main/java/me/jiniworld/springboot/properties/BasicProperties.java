@@ -9,4 +9,6 @@ import org.springframework.stereotype.Component;
 public class BasicProperties {
     @Value("${name}")
     private String name;
+    @Value("${demo.title:defaultTitle}")
+    private String demoTitle;
 }
