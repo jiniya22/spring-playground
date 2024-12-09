@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: spring-boot-qa
+
+custom:
+  name: jini-qa
+  group: jiniworld-qa

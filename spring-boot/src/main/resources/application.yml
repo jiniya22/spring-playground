@@ -1,10 +1,9 @@
 spring:
   application:
     name: spring-boot
-  profiles:
-    active: local
   config:
-    import: classpath:/demo2.yml
+    import:
+      - demo.yml
 
   devtools:
     restart:
@@ -16,7 +15,7 @@ spring:
       enabled: false
 
   main:
-    log-startup-info: false
+#    log-startup-info: false
     register-shutdown-hook: true
     lazy-initialization: true
 
@@ -52,4 +51,6 @@ logging:
       boot.autoconfigure: info
       web: debug
 
-name: jini
+custom:
+  name: jini
+  group: dreamus

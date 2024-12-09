@@ -1,0 +1,11 @@
+demo:
+  title: title-demo-qa
+
+custom:
+  name: jini-demo-qa
+#  group: dreamus-demo
+
+
+my:
+  name: demo-qa
+  age: 30

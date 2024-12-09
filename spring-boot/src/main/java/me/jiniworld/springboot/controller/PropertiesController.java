@@ -17,7 +17,7 @@ class PropertiesController {
 
     @GetMapping("/name")
     public String name() {
-        return "name: " + basicProperties.getName();
+        return "name: " + basicProperties.getCustomName();
     }
 
     @GetMapping("/my")

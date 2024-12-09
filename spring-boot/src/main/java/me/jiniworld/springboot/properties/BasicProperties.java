@@ -7,8 +7,11 @@ import org.springframework.stereotype.Component;
 @Getter
 @Component
 public class BasicProperties {
-    @Value("${name}")
-    private String name;
-    @Value("${demo.title:defaultTitle}")
+    @Value("${custom.name:empty}")
+    private String customName;
+    @Value("${custom.group:empty}")
+    private String customGroup;
+
+    @Value("${demo.title:empty}")
     private String demoTitle;
 }

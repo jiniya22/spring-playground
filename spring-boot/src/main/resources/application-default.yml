@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: spring-boot-default
+
+custom:
+  name: jini-default
+#  group: jiniworld

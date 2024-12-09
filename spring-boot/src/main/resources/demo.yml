@@ -1,2 +1,11 @@
 demo:
-  title: wow
+  title: demo
+
+custom:
+  name: "jini-${demo.title}"
+  group: "jiniworld-${demo.title2:ttt}"
+
+
+my:
+  name: demo
+  age: 20
