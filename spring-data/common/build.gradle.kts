@@ -6,4 +6,8 @@ dependencies {
 
 tasks.bootJar {
     archiveFileName.set("spring-data-common.jar")
+    manifest {
+        attributes["Implementation-Title"] =  "spring data commons by jini"
+        attributes["Implementation-Version"] = "2.0"
+    }
 }
