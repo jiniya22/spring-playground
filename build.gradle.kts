@@ -2,9 +2,9 @@ import com.diffplug.gradle.spotless.SpotlessExtension
 
 plugins {
     java
-    id("org.springframework.boot") version "3.4.0"
-    id("io.spring.dependency-management") version "1.1.6"
-    id("com.diffplug.spotless") version "7.0.0.BETA4"
+    id("org.springframework.boot")
+    id("io.spring.dependency-management")
+    id("com.diffplug.spotless")
 }
 
 java {
@@ -13,11 +13,12 @@ java {
     }
 }
 
-var gsonVersion by extra { "2.11.0" }
-
 allprojects {
-    group = "me.jiniworld"
-    version = "0.0.1"
+    val projectGroup: String by project
+    val projectVersion: String by project
+
+    group = projectGroup
+    version = projectVersion
 
     repositories {
         mavenCentral()
@@ -25,16 +26,21 @@ allprojects {
 }
 
 subprojects {
-    apply(plugin = "java")
-    apply(plugin = "org.springframework.boot")
-    apply(plugin = "io.spring.dependency-management")
-    plugins.apply("com.diffplug.spotless")
+    val gsonVersion: String by project
+    val spotlessVersion: String by project
+
+    plugins.apply {
+        apply("java")
+        apply("org.springframework.boot")
+        apply("io.spring.dependency-management")
+        apply("com.diffplug.spotless")
+    }
 
     dependencies {
         implementation("com.google.code.gson:gson:$gsonVersion")
         implementation("org.projectlombok:lombok")
         implementation("org.springframework.boot:spring-boot-starter-test")
-        implementation("com.diffplug.spotless:spotless-plugin-gradle:7.0.0.BETA4")
+        implementation("com.diffplug.spotless:spotless-plugin-gradle:$spotlessVersion")
         annotationProcessor("org.projectlombok:lombok")
         annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
         testAnnotationProcessor("org.projectlombok:lombok")
