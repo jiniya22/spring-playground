@@ -15,5 +15,4 @@ public class PersonProps {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
 }

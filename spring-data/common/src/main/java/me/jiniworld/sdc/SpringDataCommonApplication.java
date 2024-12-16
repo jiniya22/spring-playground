@@ -1,11 +1,9 @@
 package me.jiniworld.sdc;
 
 import lombok.RequiredArgsConstructor;
-import me.jiniworld.sdc.config.Person;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 @RequiredArgsConstructor
 @ConfigurationPropertiesScan("me.jiniworld.sdc.config")
