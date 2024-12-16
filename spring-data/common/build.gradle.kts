@@ -1,7 +1,9 @@
+val mysqlConnectorVersion: String by project
+
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    runtimeOnly("com.mysql:mysql-connector-j:9.1.0")
+    runtimeOnly("com.mysql:mysql-connector-j:$mysqlConnectorVersion")
 }
 
 tasks.bootJar {
