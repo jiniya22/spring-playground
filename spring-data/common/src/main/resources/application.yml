@@ -24,3 +24,6 @@ person:
   id: 123
   first-name: jini
   last-name: yoo
+
+root:
+  version: ${projectVersion}
