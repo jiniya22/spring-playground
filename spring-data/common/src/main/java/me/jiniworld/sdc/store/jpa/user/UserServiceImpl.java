@@ -5,6 +5,8 @@ import me.jiniworld.sdc.service.UserService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 @Service
@@ -20,5 +22,15 @@ class UserServiceImpl implements UserService {
     @Transactional
     public User save(User user) {
         return userRepository.save(user);
+    }
+
+    @Override
+    public User jiniworldUsername(String username) {
+        return userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
+    }
+
+    @Override
+    public List<User> findAllByEmailContains(String email) {
+        return userRepository.findAllByEmailContains(email);
     }
 }
