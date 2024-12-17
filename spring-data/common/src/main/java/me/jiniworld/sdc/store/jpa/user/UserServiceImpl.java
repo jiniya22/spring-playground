@@ -33,4 +33,9 @@ class UserServiceImpl implements UserService {
     public List<User> findAllByEmailContains(String email) {
         return userRepository.findAllByEmailContains(email);
     }
+
+    @Override
+    public List<User> findAllByAddressZipCode(String zipCode) {
+        return userRepository.findAllByAddress_ZipCode(zipCode);
+    }
 }

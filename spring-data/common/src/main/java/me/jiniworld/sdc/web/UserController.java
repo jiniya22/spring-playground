@@ -28,6 +28,11 @@ class UserController {
         return userService.jiniworldUsername(username);
     }
 
+    @GetMapping("/zip-codes/{zipCode}")
+    public List<User> zipCode(@PathVariable("zipCode") String zipCode) {
+        return userService.findAllByAddressZipCode(zipCode);
+    }
+
     @PostMapping("")
     public User save(@RequestBody User user) {
         return userService.save(user);

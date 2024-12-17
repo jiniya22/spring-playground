@@ -10,4 +10,5 @@ public interface UserService {
 
     User jiniworldUsername(String username);
     List<User> findAllByEmailContains(String email);
+    List<User> findAllByAddressZipCode(String city);
 }

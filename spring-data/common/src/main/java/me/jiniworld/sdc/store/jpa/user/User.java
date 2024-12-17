@@ -1,9 +1,6 @@
 package me.jiniworld.sdc.store.jpa.user;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.PrePersist;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.ToString;
 import org.hibernate.annotations.SQLRestriction;
@@ -20,18 +17,25 @@ public class User {
     private String email;
     private boolean active;
 
+    @Embedded
+    private Address address;
+
+    @Embedded
+    private AddressZip addressZip;
+
     protected User() {
         this.userId = null;
     }
 
-    public User(Long userId, String username, String email) {
+    public User(Long userId, String username, String email, Address address) {
         this.userId = userId;
         this.username = username;
         this.email = email;
+        this.address = address;
     }
 
     User withUserId(Long id) {
-        return new User(id, this.username, this.email);
+        return new User(id, this.username, this.email, this.address);
     }
 
     @PrePersist

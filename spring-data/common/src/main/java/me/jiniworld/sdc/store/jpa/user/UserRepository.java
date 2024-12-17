@@ -12,4 +12,8 @@ interface UserRepository extends CrudRepository<User, Long> {
     Optional<User> findByUsername(String username);
 
     List<User> findAllByEmailContains(String email);
+
+    List<User> findAllByAddressCity(String city);
+
+    List<User> findAllByAddress_ZipCode(String zipCode);
 }
