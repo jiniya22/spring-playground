@@ -30,7 +30,12 @@ class UserController {
 
     @GetMapping("/zip-codes/{zipCode}")
     public List<User> zipCode(@PathVariable("zipCode") String zipCode) {
-        return userService.findAllByAddressZipCode(zipCode);
+        return userService.findAllByAddress_zipCode(zipCode);
+    }
+
+    @GetMapping("/tags/{tag}")
+    public List<User> tag(@PathVariable("tag") String tag) {
+        return userService.findAllByAddress__tagContains(tag);
     }
 
     @PostMapping("")

@@ -35,7 +35,12 @@ class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> findAllByAddressZipCode(String zipCode) {
-        return userRepository.findAllByAddress_ZipCode(zipCode);
+    public List<User> findAllByAddress_zipCode(String zipCode) {
+        return userRepository.findAllByAddress_zipCode(zipCode);
+    }
+
+    @Override
+    public List<User> findAllByAddress__tagContains(String tag) {
+        return userRepository.findAllByAddress__tagContains(tag);
     }
 }

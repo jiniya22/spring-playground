@@ -15,5 +15,7 @@ interface UserRepository extends CrudRepository<User, Long> {
 
     List<User> findAllByAddressCity(String city);
 
-    List<User> findAllByAddress_ZipCode(String zipCode);
+    List<User> findAllByAddress_zipCode(String zipCode);
+
+    List<User> findAllByAddress__tagContains(String tag);
 }
