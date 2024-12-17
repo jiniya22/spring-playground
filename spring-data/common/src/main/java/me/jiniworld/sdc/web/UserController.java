@@ -38,6 +38,11 @@ class UserController {
         return userService.findAllByAddress__tagContains(tag);
     }
 
+    @GetMapping("/phones")
+    public List<User> phone(@RequestParam String fPhone, @RequestParam String sPhone) {
+        return userService.phone(fPhone, sPhone);
+    }
+
     @PostMapping("")
     public User save(@RequestBody User user) {
         return userService.save(user);

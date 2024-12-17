@@ -43,4 +43,9 @@ class UserServiceImpl implements UserService {
     public List<User> findAllByAddress__tagContains(String tag) {
         return userRepository.findAllByAddress__tagContains(tag);
     }
+
+    @Override
+    public List<User> phone(String fPhone, String sPhone) {
+        return userRepository.findAllByfPhoneStartsWithAndInfo_sPhoneContains(fPhone, sPhone);
+    }
 }

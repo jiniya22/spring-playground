@@ -23,6 +23,11 @@ public class User {
     @Embedded
     private AddressZip addressZip;
 
+    private String fPhone;
+
+    @Embedded
+    private Info info;
+
     protected User() {
         this.userId = null;
     }
@@ -42,4 +47,5 @@ public class User {
     void prePersist() {
         this.active = true;
     }
+
 }

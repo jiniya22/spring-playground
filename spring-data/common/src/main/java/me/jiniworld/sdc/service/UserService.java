@@ -13,4 +13,6 @@ public interface UserService {
     List<User> findAllByAddress_zipCode(String city);
 
     List<User> findAllByAddress__tagContains(String tag);
+
+    List<User> phone(String fPhone, String sPhone);
 }

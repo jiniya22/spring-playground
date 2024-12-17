@@ -18,4 +18,8 @@ interface UserRepository extends CrudRepository<User, Long> {
     List<User> findAllByAddress_zipCode(String zipCode);
 
     List<User> findAllByAddress__tagContains(String tag);
+
+    List<User> findAllByfPhoneStartsWith(String fPhone);
+    List<User> findAllByInfo_sPhoneContains(String sPhone);
+    List<User> findAllByfPhoneStartsWithAndInfo_sPhoneContains(String fPhone, String sPhone);
 }
