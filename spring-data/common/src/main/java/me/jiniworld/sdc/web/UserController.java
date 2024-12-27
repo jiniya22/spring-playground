@@ -3,6 +3,8 @@ package me.jiniworld.sdc.web;
 import lombok.RequiredArgsConstructor;
 import me.jiniworld.sdc.service.UserService;
 import me.jiniworld.sdc.store.jpa.user.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -34,13 +36,16 @@ class UserController {
     }
 
     @GetMapping("/tags/{tag}")
-    public List<User> tag(@PathVariable("tag") String tag) {
-        return userService.findAllByAddress__tagContains(tag);
+    public Page<User> tag(@PathVariable("tag") String tag,
+                        @RequestParam(required = false, defaultValue = "0") Integer page,
+                        @RequestParam(required = false, defaultValue = "3") Integer size) {
+        return userService.findAllByAddress__tagContains(tag, PageRequest.of(page, size));
     }
 
     @GetMapping("/phones")
-    public List<User> phone(@RequestParam String fPhone, @RequestParam String sPhone) {
-        return userService.phone(fPhone, sPhone);
+    public List<User> phone(@RequestParam String fPhone, @RequestParam String sPhone,
+                            @RequestParam(required = false, defaultValue = "5") Integer size) {
+        return userService.phone(fPhone, sPhone, size);
     }
 
     @PostMapping("")

@@ -2,6 +2,9 @@ package me.jiniworld.sdc.store.jpa.user;
 
 import lombok.RequiredArgsConstructor;
 import me.jiniworld.sdc.service.UserService;
+import org.springframework.data.domain.Limit;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -40,12 +43,12 @@ class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> findAllByAddress__tagContains(String tag) {
-        return userRepository.findAllByAddress__tagContains(tag);
+    public Page<User> findAllByAddress__tagContains(String tag, Pageable pageable) {
+        return userRepository.findTop2AllByAddress__tagContains(tag, pageable);
     }
 
     @Override
-    public List<User> phone(String fPhone, String sPhone) {
-        return userRepository.findAllByfPhoneStartsWithAndInfo_sPhoneContains(fPhone, sPhone);
+    public List<User> phone(String fPhone, String sPhone, int size) {
+        return userRepository.findAllByfPhoneStartsWithAndInfo_sPhoneContains(fPhone, sPhone, Limit.of(size));
     }
 }

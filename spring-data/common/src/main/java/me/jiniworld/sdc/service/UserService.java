@@ -1,6 +1,8 @@
 package me.jiniworld.sdc.service;
 
 import me.jiniworld.sdc.store.jpa.user.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -12,7 +14,7 @@ public interface UserService {
     List<User> findAllByEmailContains(String email);
     List<User> findAllByAddress_zipCode(String city);
 
-    List<User> findAllByAddress__tagContains(String tag);
+    Page<User> findAllByAddress__tagContains(String tag, Pageable pageable);
 
-    List<User> phone(String fPhone, String sPhone);
+    List<User> phone(String fPhone, String sPhone, int size);
 }

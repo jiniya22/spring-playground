@@ -1,5 +1,7 @@
 package me.jiniworld.sdc.store.jpa.user;
-
+import org.springframework.data.domain.Limit;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -17,9 +19,9 @@ interface UserRepository extends CrudRepository<User, Long> {
 
     List<User> findAllByAddress_zipCode(String zipCode);
 
-    List<User> findAllByAddress__tagContains(String tag);
+    Page<User> findTop2AllByAddress__tagContains(String tag, Pageable pageable);
 
     List<User> findAllByfPhoneStartsWith(String fPhone);
     List<User> findAllByInfo_sPhoneContains(String sPhone);
-    List<User> findAllByfPhoneStartsWithAndInfo_sPhoneContains(String fPhone, String sPhone);
+    List<User> findAllByfPhoneStartsWithAndInfo_sPhoneContains(String fPhone, String sPhone, Limit limit);
 }
