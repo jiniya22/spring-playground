@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: spring-data-jpa
+  datasource:
+    url: jdbc:mysql://localhost:3306/demofx
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: example
+    hikari:
+      auto-commit: false
+      connection-test-query: SELECT 1
+      pool-name: pool-sdc
+  jpa:
+    properties:
+      hibernate:
+        format_sql: false
+        hbm2ddl.auto: update
+        default_batch_fetch_size: 500
+        dialect: org.hibernate.dialect.MySQLDialect
+        use_sql_comments: true
+        highlight_sql: true
+    open-in-view: false
+    show-sql: true
+
+person:
+  id: 123
+  first-name: jini
+  last-name: yoo
+
+root:
+  version: ${projectVersion}
+
+logging:
+  level:
+    org.hibernate:
+#      SQL: debug
+      orm.jdbc.bind: trace
+    org.springframework.orm.jpa.JpaTransactionManager: debug
+    org.springframework.transaction.interceptor: trace

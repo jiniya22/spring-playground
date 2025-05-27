@@ -1,7 +1,8 @@
 rootProject.name = "spring-playground"
 include(
     "spring-boot",
-    "spring-data:common"
+    "spring-data:common",
+    "spring-data:jpa"
 )
 
 pluginManagement {
